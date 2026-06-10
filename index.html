@@ -41,7 +41,7 @@
         <a href="#advisory">Advisory</a>
         <a href="#independence">Independence</a>
       </nav>
-      <a class="nav-cta" href="mailto:partners@robofront.io?subject=ROBOFRONT%20Introduction%20Request">Request introduction</a>
+      <button class="nav-cta" data-form="introduction">Request introduction</button>
       <button class="menu-button" data-menu-button aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
     </div>
     <div class="mobile-nav" data-mobile-nav>
@@ -50,7 +50,7 @@
       <a href="#products">Intelligence</a>
       <a href="#advisory">Advisory</a>
       <a href="#independence">Independence</a>
-      <a href="mailto:partners@robofront.io?subject=ROBOFRONT%20Introduction%20Request">Request introduction</a>
+      <a href="#" data-form="introduction">Request introduction</a>
     </div>
   </header>
 
@@ -65,8 +65,8 @@
         <h1>The intelligence layer on the robotics&nbsp;economy.</h1>
         <p class="lead">Field-grounded research, senior advisory, and curated access across China's fastest-moving robotics ecosystem — written for decision-makers who cannot afford second-hand insight.</p>
         <div class="hero-actions">
-          <a class="button button-light" href="mailto:editorial@robofront.io?subject=Subscribe%20to%20The%20Front%20Brief">Subscribe to The Front Brief</a>
-          <a class="button button-ghost" href="mailto:partners@robofront.io?subject=ROBOFRONT%20Introduction%20Request">Request an introduction</a>
+          <button class="button button-light" data-form="brief">Subscribe to The Front Brief</button>
+          <button class="button button-ghost" data-form="introduction">Request an introduction</button>
         </div>
       </div>
       <div class="hero-dateline">
@@ -167,7 +167,7 @@
           <p class="kicker">THE FRONT BRIEF</p>
           <h2>A weekly dispatch from the front line of the robot age.</h2>
           <p class="dispatch-sub">Deployments, funding, policy, pricing, and field observations — concise, sourced, and free.</p>
-          <a class="button button-navy" href="mailto:editorial@robofront.io?subject=Subscribe%20to%20The%20Front%20Brief">Join the briefing list</a>
+          <button class="button button-navy" data-form="brief">Join the briefing list</button>
         </div>
         <div class="dispatch-log reveal" aria-label="Recent signals">
           <article class="log-row"><span class="log-date">06 / 2026</span><div><h3>Humanoid retail arrives</h3><p>Working humanoids now sell off shop floors in Huaqiangbei — observed and priced on site.</p></div></article>
@@ -177,16 +177,49 @@
       </div>
     </section>
 
+    <!-- FIELD ARCHIVE: gallery + video -->
+    <section id="archive" class="section archive">
+      <div class="container">
+        <div class="ev-head reveal">
+          <p class="kicker">FIELD ARCHIVE</p>
+          <h2>Frames and footage from the corridor.</h2>
+        </div>
+        <div class="video-grid reveal">
+          <figure class="video-card">
+            <video controls preload="none" playsinline poster="assets/field-robot-coffee-kiosk.jpg">
+              <source src="assets/video/field-clip-01.mp4" type="video/mp4" />
+            </video>
+            <figcaption class="mono-line">FIELD CLIP 01 · SHENZHEN · 06.2026</figcaption>
+          </figure>
+          <figure class="video-card">
+            <video controls preload="none" playsinline poster="assets/field-humanoids-resting.jpg">
+              <source src="assets/video/field-clip-02.mp4" type="video/mp4" />
+            </video>
+            <figcaption class="mono-line">FIELD CLIP 02 · SHENZHEN · 06.2026</figcaption>
+          </figure>
+        </div>
+        <div class="gallery reveal" aria-label="Field photography gallery">
+          <a class="g-item" href="assets/hero-pingan-tower.jpg"><img src="assets/hero-pingan-tower.jpg" alt="Ping An Finance Centre, Futian, Shenzhen" loading="lazy" /></a>
+          <a class="g-item" href="assets/field-future-era-store.jpg"><img src="assets/field-future-era-store.jpg" alt="Humanoid robots in a retail store, Huaqiangbei" loading="lazy" /></a>
+          <a class="g-item" href="assets/corridor-futian-cbd.jpg"><img src="assets/corridor-futian-cbd.jpg" alt="Futian CBD skyline at street level" loading="lazy" /></a>
+          <a class="g-item" href="assets/field-robot-latte.jpg"><img src="assets/field-robot-latte.jpg" alt="Latte poured by a robotic barista" loading="lazy" /></a>
+          <a class="g-item" href="assets/band-towers-diagonal.jpg"><img src="assets/band-towers-diagonal.jpg" alt="Supertall towers seen from below" loading="lazy" /></a>
+          <a class="g-item" href="assets/field-dexterous-hands.jpg"><img src="assets/field-dexterous-hands.jpg" alt="Dexterous robotic hands on demonstration table" loading="lazy" /></a>
+        </div>
+        <p class="mono-line archive-note">ALL FRAMES · ROBOFRONT ORIGINAL FIELD PHOTOGRAPHY · NO STOCK, NO GENERATED IMAGERY</p>
+      </div>
+    </section>
+
     <!-- PRODUCTS -->
     <section id="products" class="section products">
       <div class="container">
         <p class="kicker reveal">INTELLIGENCE PRODUCTS</p>
         <h2 class="products-h reveal">Research built for decisions worth millions.</h2>
         <div class="product-grid">
-          <article class="product reveal"><span class="p-label">WEEKLY</span><h3>The Front Brief</h3><p>The signal newsletter on deployments, funding, policy, and company moves.</p><a href="mailto:editorial@robofront.io?subject=The%20Front%20Brief">Subscribe&nbsp;→</a></article>
-          <article class="product reveal"><span class="p-label">MONTHLY</span><h3>China Robotics Monthly</h3><p>Structured brief on shipments, manufacturers, pricing, and deployment signals.</p><a href="mailto:partners@robofront.io?subject=China%20Robotics%20Monthly">Start a trial&nbsp;→</a></article>
-          <article class="product reveal"><span class="p-label">QUARTERLY</span><h3>Deep Dives</h3><p>Long-form reports on humanoids, embodied AI, supply chains, and category leaders.</p><a href="mailto:partners@robofront.io?subject=Deep%20Dive%20Access">Request access&nbsp;→</a></article>
-          <article class="product reveal"><span class="p-label">CUSTOM</span><h3>Executive Briefings</h3><p>Board-ready notes, diligence support, and strategic positioning for capital decisions.</p><a href="mailto:partners@robofront.io?subject=Executive%20Briefing%20Request">Request briefing&nbsp;→</a></article>
+          <article class="product reveal"><span class="p-label">WEEKLY</span><h3>The Front Brief</h3><p>The signal newsletter on deployments, funding, policy, and company moves.</p><a href="#" data-form="brief">Subscribe&nbsp;→</a></article>
+          <article class="product reveal"><span class="p-label">MONTHLY</span><h3>China Robotics Monthly</h3><p>Structured brief on shipments, manufacturers, pricing, and deployment signals.</p><a href="#" data-form="trial">Start a trial&nbsp;→</a></article>
+          <article class="product reveal"><span class="p-label">QUARTERLY</span><h3>Deep Dives</h3><p>Long-form reports on humanoids, embodied AI, supply chains, and category leaders.</p><a href="#" data-form="deepdive">Request access&nbsp;→</a></article>
+          <article class="product reveal"><span class="p-label">CUSTOM</span><h3>Executive Briefings</h3><p>Board-ready notes, diligence support, and strategic positioning for capital decisions.</p><a href="#" data-form="briefing">Request briefing&nbsp;→</a></article>
         </div>
       </div>
     </section>
@@ -204,7 +237,7 @@
             <li>Strategic introductions across the supply chain</li>
             <li>Decision-ready post-report with recommendations</li>
           </ul>
-          <a class="button button-light" href="mailto:access@robofront.io?subject=ROBOFRONT%20Access%20Inquiry">Apply for access</a>
+          <button class="button button-light" data-form="access">Apply for access</button>
         </div>
         <figure class="adv-photo reveal">
           <img src="assets/corridor-futian-cbd.jpg" alt="Futian central business district skyline at street level, Shenzhen" loading="lazy" />
@@ -235,8 +268,8 @@
           <h2>You do not need to guess the robotics future. We map it.</h2>
         </div>
         <div class="closing-actions">
-          <a class="button button-light" href="mailto:editorial@robofront.io?subject=Subscribe%20to%20The%20Front%20Brief">Join The Front Brief</a>
-          <a class="button button-ghost" href="mailto:partners@robofront.io?subject=ROBOFRONT%20Introduction%20Request">Request introduction</a>
+          <button class="button button-light" data-form="brief">Join The Front Brief</button>
+          <button class="button button-ghost" data-form="introduction">Request introduction</button>
         </div>
       </div>
     </section>
@@ -250,9 +283,9 @@
       </div>
       <div>
         <h4>Intelligence</h4>
-        <a href="mailto:editorial@robofront.io?subject=The%20Front%20Brief">The Front Brief</a>
-        <a href="mailto:partners@robofront.io?subject=China%20Robotics%20Monthly">China Robotics Monthly</a>
-        <a href="mailto:partners@robofront.io?subject=Deep%20Dive%20Access">Deep Dives</a>
+        <a href="#" data-form="brief">The Front Brief</a>
+        <a href="#" data-form="trial">China Robotics Monthly</a>
+        <a href="#" data-form="deepdive">Deep Dives</a>
       </div>
       <div>
         <h4>Company</h4>
@@ -269,6 +302,38 @@
       <p>© 2026 ROBOFRONT Intelligence. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- FORM MODAL -->
+  <div class="modal" data-modal hidden>
+    <div class="modal-veil" data-modal-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-x" data-modal-close aria-label="Close">×</button>
+      <p class="mono-line modal-kicker" data-modal-kicker>ROBOFRONT INTELLIGENCE</p>
+      <h3 id="modal-title" data-modal-title>Request</h3>
+      <p class="modal-sub" data-modal-sub></p>
+      <form data-modal-form action="https://formsubmit.co/partners@robofront.io" method="POST">
+        <input type="hidden" name="_subject" value="ROBOFRONT — Website inquiry" data-f-subject />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://robofront.io/thanks.html" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="request_type" value="" data-f-type />
+        <label>FULL NAME<input type="text" name="name" required autocomplete="name" /></label>
+        <label>WORK EMAIL<input type="email" name="email" required autocomplete="email" /></label>
+        <label data-f-org>ORGANISATION<input type="text" name="organisation" autocomplete="organization" /></label>
+        <label data-f-role>ROLE<input type="text" name="role" autocomplete="organization-title" /></label>
+        <label data-f-msg>WHAT DECISION ARE YOU WORKING ON?<textarea name="message" rows="4"></textarea></label>
+        <button class="button button-navy modal-submit" type="submit" data-f-submit>Send request</button>
+        <p class="modal-fine">Replies come from a named analyst, usually within two business days.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" data-lightbox hidden>
+    <button class="modal-x lb-x" data-lightbox-close aria-label="Close">×</button>
+    <img src="" alt="" data-lightbox-img />
+  </div>
 
   <script src="script.js"></script>
 </body>

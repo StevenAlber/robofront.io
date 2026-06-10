@@ -1,4 +1,4 @@
-# ROBOFRONT Intelligence — robofront.io (v1.1)
+# ROBOFRONT Intelligence — robofront.io (v2.1)
 
 Static landing page for **robofront.io**.
 
@@ -28,3 +28,10 @@ Asenda failid kaustas `assets/` SAMADE nimedega — HTML-i muutma ei pea:
 
 ## E-mailid (seadista Gandis või asenda)
 - partners@robofront.io · editorial@robofront.io · access@robofront.io
+
+## v2.1 lisad (12.06.2026)
+- **Kontaktivormid** (6 tüüpi: Front Brief, Introduction, Access, Trial, Deep Dive, Briefing) — oma kujundusega modaal, EI mailto
+  - Transport: FormSubmit.co relee → partners@robofront.io. **Esimese saadetise järel tuleb sulle kinnitusmeil — kliki link aktiveerimiseks!**
+  - thanks.html = kinnitusleht pärast saatmist
+- **Field Archive sektsioon**: fotogalerii (lightbox) + 2 videokohta
+  - Videod: lae MP4-d kausta `assets/video/` nimedega `field-clip-01.mp4` ja `field-clip-02.mp4` (kuni ~30 sek, H.264)
