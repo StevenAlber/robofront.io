@@ -2,15 +2,12 @@
 
 Static landing page for **robofront.io**.
 
-## v1.1 muudatused (11.06.2026)
-- **Fondid laetud**: DM Sans + Inter (Google Fonts) — varem jooksis sait Arial/Helvetica peal
-- **Päris field-fotod**: CSS-joonistatud robot asendatud Shenzheni fotodega (Huaqiangbei robotipood, juuni 2026)
-- **Uus sektsioon "Field Evidence"**: 3 fotot allkirjadega
-- **Field Report kaart**: dekoratiivne võltsgraafik asendatud päris fotoga (3 humanoidi toolidel)
-- **Favicon** lisatud (assets/favicon.svg)
-- **og:image** lisatud (assets/og-image.jpg) — sotsiaaljagaminne näitab nüüd brändipilti
-- Hongkongi kaardisõlme tekst muudetud kliendikeelseks ("Headquarters · contracting hub")
-- Footerisse lisatud ROBOFRONT CHINA Telegram-link — **⚠️ ASENDA õige kanali URL** (index.html, otsi "REPLACE_WITH_CHANNEL")
+## v2.0 — toimetuslik redisain (11.06.2026)
+- **Täiesti uus toimetuslik kujundus**: serif-päised (Newsreader), Inter kehatekst, IBM Plex Mono dateline'id ja koordinaadid — intelligence-dossier esteetika
+- **Täislaiuses fotod tekstiga peal**: Ping An torni hero, Futian CBD poster-bänd tsitaadiga, dispatch-logi
+- **Uued linnafotod sees** (Ping An, Futian CBD, deployment-robot — lapsed kaadrist väljas)
+- Field Evidence võrgustik mono-allkirjade ja VERIFIED ON SITE märgistega
+- Footeris ROBOFRONT CHINA Telegram-link — **⚠️ ASENDA õige kanali URL** (otsi "REPLACE_WITH_CHANNEL")
 
 ## Fotode vahetamine (kui uued originaalid valmis)
 Asenda failid kaustas `assets/` SAMADE nimedega — HTML-i muutma ei pea:
