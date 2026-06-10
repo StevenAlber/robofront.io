@@ -1,37 +1,31 @@
-# ROBOFRONT Intelligence — robofront.io (v2.1)
+# ROBOFRONT Intelligence Landing Page
 
 Static landing page for **robofront.io**.
 
-## v2.0 — toimetuslik redisain (11.06.2026)
-- **Täiesti uus toimetuslik kujundus**: serif-päised (Newsreader), Inter kehatekst, IBM Plex Mono dateline'id ja koordinaadid — intelligence-dossier esteetika
-- **Täislaiuses fotod tekstiga peal**: Ping An torni hero, Futian CBD poster-bänd tsitaadiga, dispatch-logi
-- **Uued linnafotod sees** (Ping An, Futian CBD, deployment-robot — lapsed kaadrist väljas)
-- Field Evidence võrgustik mono-allkirjade ja VERIFIED ON SITE märgistega
-- Footeris ROBOFRONT CHINA Telegram-link — **⚠️ ASENDA õige kanali URL** (otsi "REPLACE_WITH_CHANNEL")
-
-## Fotode vahetamine (kui uued originaalid valmis)
-Asenda failid kaustas `assets/` SAMADE nimedega — HTML-i muutma ei pea:
-- `hero-shenzhen-humanoid.jpg` — hero, portree 4:5 (1200×1500)
-- `field-dexterous-hands.jpg` — 4:3 (1100×825)
-- `field-robot-coffee-kiosk.jpg` — 4:3
-- `field-robot-latte.jpg` — 4:3
-- `field-humanoids-resting.jpg` — ruut 1:1
-- `og-image.jpg` — 1200×630
-- `field-future-era-store.jpg` — varus, praegu kasutamata (4:5)
+## Files
+- `index.html` — landing page markup
+- `styles.css` — complete ROBOFRONT visual system styling
+- `script.js` — mobile navigation and reveal animations
+- `assets/favicon.svg` — favicon
 
 ## GitHub Pages deployment
-1. Lae kõik failid repo juurkausta (assets/ kaust kaasa!)
-2. Settings → Pages → Deploy from a branch → main / root
-3. DNS (Gandi): A-kirjed apex-domeenile GitHub Pages IP-dele:
-   - 185.199.108.153 / 185.199.109.153 / 185.199.110.153 / 185.199.111.153
-   - CNAME `www` → `<sinu-github-kasutajanimi>.github.io.`
+1. Create a new GitHub repository, for example `robofront-io`.
+2. Upload all files in this folder to the repository root.
+3. Go to **Settings → Pages**.
+4. Under **Build and deployment**, choose **Deploy from a branch**.
+5. Choose `main` branch and `/root`, then save.
+6. Point `robofront.io` DNS to GitHub Pages:
+   - `A` records for apex domain to GitHub Pages IPs:
+     - `185.199.108.153`
+     - `185.199.109.153`
+     - `185.199.110.153`
+     - `185.199.111.153`
+   - Optional `CNAME` for `www` to `<your-github-username>.github.io`
 
-## E-mailid (seadista Gandis või asenda)
-- partners@robofront.io · editorial@robofront.io · access@robofront.io
+## Contact emails used in page
+The page uses these placeholder addresses:
+- `partners@robofront.io`
+- `editorial@robofront.io`
+- `access@robofront.io`
 
-## v2.1 lisad (12.06.2026)
-- **Kontaktivormid** (6 tüüpi: Front Brief, Introduction, Access, Trial, Deep Dive, Briefing) — oma kujundusega modaal, EI mailto
-  - Transport: FormSubmit.co relee → partners@robofront.io. **Esimese saadetise järel tuleb sulle kinnitusmeil — kliki link aktiveerimiseks!**
-  - thanks.html = kinnitusleht pärast saatmist
-- **Field Archive sektsioon**: fotogalerii (lightbox) + 2 videokohta
-  - Videod: lae MP4-d kausta `assets/video/` nimedega `field-clip-01.mp4` ja `field-clip-02.mp4` (kuni ~30 sek, H.264)
+Set these up in your domain email provider or replace them in `index.html`.
