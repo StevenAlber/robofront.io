@@ -5,15 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ROBOFRONT Intelligence — Live from the frontline of the robot age</title>
 <meta name="description" content="Premium robotics intelligence from the ground in Shenzhen. Field-verified reporting, strategic advisory and China access for investors, corporations, operators and media.">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="canonical" href="https://robofront.io/">
 <meta name="theme-color" content="#001A2E">
+
+<!-- Icons / logos -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
 <!-- Open Graph: Facebook, WhatsApp, Telegram, LinkedIn, Signal -->
 <meta property="og:site_name" content="ROBOFRONT Intelligence">
 <meta property="og:title" content="ROBOFRONT Intelligence — Live from the frontline of the robot age">
 <meta property="og:description" content="Field-verified robotics intelligence from Shenzhen — for investors, corporations, operators and media houses who cannot afford second-hand insight.">
 <meta property="og:image" content="https://robofront.io/assets/og-image.jpg">
 <meta property="og:image:secure_url" content="https://robofront.io/assets/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="ROBOFRONT Intelligence — live from the frontline of the robot age">
@@ -26,17 +33,39 @@
 <meta name="twitter:description" content="Field-verified robotics intelligence from Shenzhen. Intelligence products, strategic advisory and application-only China access.">
 <meta name="twitter:image" content="https://robofront.io/assets/og-image.jpg">
 <meta name="twitter:image:alt" content="ROBOFRONT Intelligence — live from the frontline of the robot age">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Self-hosted fonts (no third-party CDN) -->
+<link rel="preload" href="assets/fonts/newsreader-opsz.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/plexmono-500.woff2" as="font" type="font/woff2" crossorigin>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://robofront.io/#org","name":"ROBOFRONT Intelligence","url":"https://robofront.io/","logo":"https://robofront.io/assets/icon-512.png","description":"Field-verified robotics intelligence from the ground in Shenzhen.","parentOrganization":{"@type":"Organization","name":"KRYONIS Sovereign Systems Limited","address":{"@type":"PostalAddress","addressRegion":"Hong Kong SAR"}}},
+{"@type":"WebSite","@id":"https://robofront.io/#site","url":"https://robofront.io/","name":"ROBOFRONT Intelligence","inLanguage":"en","publisher":{"@id":"https://robofront.io/#org"}}
+]}
+</script>
+
 <style>
 /* ============================================================
-   ROBOFRONT INTELLIGENCE — single-file build
+   ROBOFRONT INTELLIGENCE — single-file build (v3.0)
    Palette: navy #0F2942 / ink #001A2E / cream #F7F4ED
-            brass #B08D3E / teal #0E5E60
+            brass #B08D3E / steel #33566A
    Type: Newsreader (display) / Inter (body) / IBM Plex Mono (meta)
-   Mobile-first. WCAG AA contrast on every surface.
+   Self-hosted fonts · AVIF/WebP picture · WCAG AA · mobile-first.
    ============================================================ */
+
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:400 600;font-display:swap;
+  src:url('assets/fonts/newsreader-opsz.woff2') format('woff2');}
+@font-face{font-family:'Newsreader';font-style:italic;font-weight:400 600;font-display:swap;
+  src:url('assets/fonts/newsreader-opsz-italic.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;
+  src:url('assets/fonts/inter-wght.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url('assets/fonts/plexmono-400.woff2') format('woff2');}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;
+  src:url('assets/fonts/plexmono-500.woff2') format('woff2');}
+
 :root{
   --navy:#0F2942;
   --ink:#001A2E;
@@ -48,8 +77,8 @@
   --brass:#B08D3E;
   --brass-bright:#C9A45A;
   --brass-deep:#8B6E2E;
-  --teal:#0E5E60;
-  --teal-bright:#5FBFC3;
+  --steel:#33566A;
+  --steel-bright:#93AEBF;
   --line-on-dark:rgba(247,244,237,0.18);
   --max:1140px;
 }
@@ -70,7 +99,7 @@ img{max-width:100%;display:block;}
 a{color:inherit;}
 .mono{font-family:'IBM Plex Mono',monospace;}
 .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px;}
-h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;line-height:1.12;}
+h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;line-height:1.12;font-optical-sizing:auto;}
 :focus-visible{outline:3px solid var(--brass-bright);outline-offset:2px;}
 
 /* ---------- eyebrow / dateline device ---------- */
@@ -83,7 +112,7 @@ h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;line-height:1.12
 .dateline.on-dark{color:var(--brass-bright);}
 .dateline.on-light{color:var(--brass-deep);}
 
-/* ---------- buttons: solid only, no ghosts ---------- */
+/* ---------- buttons ---------- */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
   font-family:'Inter',sans-serif;font-weight:600;font-size:15px;
@@ -97,8 +126,8 @@ h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;line-height:1.12
 .btn-cream:hover{background:#FFFFFF;}
 .btn-navy{background:var(--navy);color:var(--cream);}
 .btn-navy:hover{background:#16395C;}
-.btn-teal{background:var(--teal);color:#FFFFFF;}
-.btn-teal:hover{background:#137A7D;}
+.btn-steel{background:var(--steel);color:#FFFFFF;}
+.btn-steel:hover{background:#3E6478;}
 
 /* ---------- inline email forms ---------- */
 .inline-form{display:flex;flex-direction:column;gap:10px;width:100%;}
@@ -116,43 +145,22 @@ h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;line-height:1.12
 }
 
 /* ============================ NAV ============================ */
-.nav{
-  position:sticky;top:0;z-index:60;
-  background:var(--ink);
-  border-bottom:1px solid var(--line-on-dark);
-}
-.nav-inner{
-  max-width:var(--max);margin:0 auto;padding:0 20px;
-  height:62px;display:flex;align-items:center;justify-content:space-between;gap:16px;
-}
-.brand{
-  font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:15px;
-  letter-spacing:0.14em;color:var(--cream);text-decoration:none;white-space:nowrap;
-}
+.nav{position:sticky;top:0;z-index:60;background:var(--ink);border-bottom:1px solid var(--line-on-dark);}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.brand{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:15px;letter-spacing:0.14em;color:var(--cream);text-decoration:none;white-space:nowrap;}
 .brand b{color:var(--brass-bright);font-weight:500;}
 .nav-links{display:none;align-items:center;gap:26px;list-style:none;}
-.nav-links a{
-  font-size:14px;font-weight:500;color:var(--cream);text-decoration:none;
-}
+.nav-links a{font-size:14px;font-weight:500;color:var(--cream);text-decoration:none;}
 .nav-links a:hover{color:var(--brass-bright);}
 .nav-cta{display:none;}
-.nav-burger{
-  display:flex;flex-direction:column;justify-content:center;gap:5px;
-  width:44px;height:44px;background:transparent;border:none;cursor:pointer;align-items:center;
-}
+.nav-burger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:transparent;border:none;cursor:pointer;align-items:center;}
 .nav-burger span{display:block;width:22px;height:2px;background:var(--cream);transition:transform .2s,opacity .2s;}
 .nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
 .nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{
-  display:none;background:var(--ink);border-bottom:1px solid var(--line-on-dark);
-  padding:8px 20px 20px;
-}
+.mobile-menu{display:none;background:var(--ink);border-bottom:1px solid var(--line-on-dark);padding:8px 20px 20px;}
 .mobile-menu.open{display:block;}
-.mobile-menu a{
-  display:block;padding:13px 4px;color:var(--cream);text-decoration:none;
-  font-size:16px;font-weight:500;border-bottom:1px solid rgba(247,244,237,0.10);
-}
+.mobile-menu a{display:block;padding:13px 4px;color:var(--cream);text-decoration:none;font-size:16px;font-weight:500;border-bottom:1px solid rgba(247,244,237,0.10);}
 .mobile-menu a:last-child{border-bottom:none;}
 .mobile-menu a:hover{color:var(--brass-bright);}
 @media(min-width:880px){
@@ -163,45 +171,22 @@ h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;line-height:1.12
 }
 
 /* ============================ HERO ============================ */
-.hero{
-  position:relative;background:var(--ink);color:var(--cream);
-  overflow:hidden;
+.hero{position:relative;background:var(--ink);color:var(--cream);overflow:hidden;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.hero-scrim{position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,26,46,0.72) 0%,rgba(0,26,46,0.34) 55%,rgba(0,26,46,0.12) 100%),
+    linear-gradient(180deg,rgba(0,26,46,0.42) 0%,rgba(0,26,46,0.30) 45%,rgba(0,26,46,0.88) 100%);
 }
-.hero-bg{
-  position:absolute;inset:0;
-  background:url('assets/hero-shenzhen-humanoid.jpg') center 30%/cover no-repeat;
-}
-.hero-bg::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(0,26,46,0.82) 0%,rgba(0,26,46,0.66) 45%,rgba(0,26,46,0.92) 100%);
-}
-.hero-inner{
-  position:relative;z-index:1;
-  max-width:var(--max);margin:0 auto;padding:84px 20px 64px;
-}
-.hero h1{
-  font-size:clamp(38px,8.5vw,72px);
-  color:#FFFFFF;margin:18px 0 16px;max-width:14ch;
-}
+.hero-inner{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:84px 20px 64px;}
+.hero h1{font-size:clamp(38px,8.5vw,72px);color:#FFFFFF;margin:18px 0 16px;max-width:14ch;}
 .hero h1 em{font-style:italic;color:var(--brass-bright);}
-.hero .lede{
-  font-size:clamp(17px,2.4vw,20px);line-height:1.6;color:#E9E4D8;
-  max-width:54ch;margin-bottom:30px;
-}
+.hero .lede{font-size:clamp(17px,2.4vw,20px);line-height:1.6;color:#EDE8DC;max-width:54ch;margin-bottom:30px;}
 .hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:520px;}
-.hero-ctas .or{
-  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;
-  text-transform:uppercase;color:#C7C0B0;text-align:left;
-}
-.hero-ticker{
-  position:relative;z-index:1;border-top:1px solid var(--line-on-dark);
-  background:rgba(0,26,46,0.55);
-}
-.hero-ticker .wrap{
-  display:flex;flex-wrap:wrap;gap:6px 28px;padding:14px 20px;
-  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;
-  text-transform:uppercase;color:#CFE6E7;
-}
+.hero-ctas .or{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#C7C0B0;text-align:left;}
+.hero-ticker{position:relative;z-index:1;border-top:1px solid var(--line-on-dark);background:rgba(0,26,46,0.55);}
+.hero-ticker .wrap{display:flex;flex-wrap:wrap;gap:6px 28px;padding:14px 20px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#CFE0E6;}
 .hero-ticker b{color:var(--brass-bright);font-weight:500;}
 @media(min-width:880px){
   .hero-inner{padding:130px 20px 96px;}
@@ -212,14 +197,9 @@ h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;line-height:1.12
 .section{padding:72px 0;}
 .section-dark{background:var(--navy);color:var(--cream);}
 .section-ink{background:var(--ink);color:var(--cream);}
-.section h2{
-  font-size:clamp(28px,5.5vw,44px);
-  margin:16px 0 18px;max-width:24ch;
-}
+.section h2{font-size:clamp(28px,5.5vw,44px);margin:16px 0 18px;max-width:24ch;}
 .section-dark h2,.section-ink h2{color:#FFFFFF;}
-.section .sub{
-  font-size:17px;line-height:1.65;max-width:62ch;
-}
+.section .sub{font-size:17px;line-height:1.65;max-width:62ch;}
 .section-dark .sub,.section-ink .sub{color:#DCD7CB;}
 .section-light h2{color:var(--ink);}
 @media(min-width:880px){.section{padding:100px 0;}}
@@ -227,55 +207,28 @@ h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;line-height:1.12
 /* ---------- problem ---------- */
 .problem-grid{display:grid;gap:28px;margin-top:42px;}
 .problem-item{border-top:2px solid var(--navy);padding-top:18px;}
-.problem-item .mono{
-  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);
-  display:block;margin-bottom:10px;
-}
+.problem-item .mono{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--steel);display:block;margin-bottom:10px;}
 .problem-item h3{font-size:22px;color:var(--ink);margin-bottom:8px;}
 .problem-item p{font-size:15.5px;color:var(--muted-on-cream);}
-.problem-pull{
-  margin-top:48px;border-left:3px solid var(--brass);padding:6px 0 6px 22px;
-  font-family:'Newsreader',Georgia,serif;font-style:italic;
-  font-size:clamp(20px,3.4vw,26px);line-height:1.4;color:var(--ink);max-width:30ch;
-}
+.problem-pull{margin-top:48px;border-left:3px solid var(--brass);padding:6px 0 6px 22px;font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:clamp(20px,3.4vw,26px);line-height:1.4;color:var(--ink);max-width:30ch;}
 @media(min-width:880px){.problem-grid{grid-template-columns:repeat(3,1fr);gap:40px;}}
 
 /* ---------- products ---------- */
 .products{display:grid;gap:18px;margin-top:46px;}
-.product{
-  background:rgba(247,244,237,0.04);
-  border:1px solid var(--line-on-dark);border-radius:4px;
-  padding:28px 24px;display:flex;flex-direction:column;gap:14px;
-}
-.product .tag{
-  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.16em;
-  text-transform:uppercase;color:var(--ink);background:var(--brass-bright);
-  padding:4px 9px;border-radius:2px;align-self:flex-start;font-weight:500;
-}
-.product .tag.teal{background:var(--teal-bright);color:var(--ink);}
+.product{background:rgba(247,244,237,0.04);border:1px solid var(--line-on-dark);border-radius:4px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;}
+.product .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);background:var(--brass-bright);padding:4px 9px;border-radius:2px;align-self:flex-start;font-weight:500;}
+.product .tag.steel{background:var(--steel-bright);color:var(--ink);}
 .product h3{font-size:25px;color:#FFFFFF;}
 .product p{font-size:15px;color:#D6D1C5;flex:1;}
-.product .for{
-  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;
-  text-transform:uppercase;color:#A9C4C5;
-}
+.product .for{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#AFC2CB;}
 @media(min-width:720px){.products{grid-template-columns:1fr 1fr;gap:24px;}}
 
 /* ---------- band image ---------- */
-.band{
-  height:34vh;min-height:220px;
-  background:url('assets/band-towers-diagonal.jpg') center/cover no-repeat fixed;
-}
-.band-pingan{
-  background:url('assets/hero-pingan-tower.jpg') center 35%/cover no-repeat fixed;
-}
-@media(max-width:880px){.band,.band-pingan{background-attachment:scroll;}}
-.band-caption{
-  background:var(--ink);color:#9FB3B4;
-  font-family:'IBM Plex Mono',monospace;font-size:10.5px;
-  letter-spacing:0.14em;text-transform:uppercase;
-  padding:10px 20px;text-align:right;
-}
+.band{height:34vh;min-height:220px;background-position:center;background-size:cover;background-repeat:no-repeat;background-attachment:fixed;}
+.band-towers{background-image:image-set(url('assets/band-towers-diagonal.avif') type('image/avif'),url('assets/band-towers-diagonal.webp') type('image/webp'),url('assets/band-towers-diagonal.jpg') type('image/jpeg'));}
+.band-pingan{background-position:center 35%;background-image:image-set(url('assets/hero-pingan-tower.avif') type('image/avif'),url('assets/hero-pingan-tower.webp') type('image/webp'),url('assets/hero-pingan-tower.jpg') type('image/jpeg'));}
+@media(max-width:880px){.band{background-attachment:scroll;}}
+.band-caption{background:var(--ink);color:#9FB3B4;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;padding:10px 20px;text-align:right;}
 
 /* ---------- advisory ---------- */
 .advisory-grid{display:grid;gap:36px;margin-top:42px;align-items:start;}
@@ -285,61 +238,53 @@ h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;line-height:1.12
 .advisory-list li{border-top:1px solid var(--paper-line);padding-top:16px;}
 .advisory-list h3{font-size:20px;color:var(--ink);margin-bottom:6px;}
 .advisory-list p{font-size:15px;color:var(--muted-on-cream);}
-.advisory-form{
-  margin-top:40px;background:#FFFFFF;border:1px solid var(--paper-line);
-  border-radius:4px;padding:26px 22px;max-width:640px;
-}
-.advisory-form .mono{
-  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--teal);display:block;margin-bottom:14px;
-}
+.advisory-form{margin-top:40px;background:#FFFFFF;border:1px solid var(--paper-line);border-radius:4px;padding:26px 22px;max-width:640px;}
+.advisory-form .mono{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--steel);display:block;margin-bottom:14px;}
 @media(min-width:880px){.advisory-grid{grid-template-columns:1.05fr 1fr;gap:56px;}}
 
 /* ---------- field reports ---------- */
 .gallery{display:grid;gap:18px;margin-top:46px;}
-.shot{display:flex;flex-direction:column;gap:0;border-radius:4px;overflow:hidden;background:rgba(247,244,237,0.04);border:1px solid var(--line-on-dark);}
-.shot img{width:100%;aspect-ratio:4/3;object-fit:cover;}
-.shot figcaption{
-  padding:13px 15px;
-  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;
-  text-transform:uppercase;color:#CFE6E7;line-height:1.6;
-}
+.shot{display:flex;flex-direction:column;border-radius:4px;overflow:hidden;background:rgba(247,244,237,0.04);border:1px solid var(--line-on-dark);}
+.shot-view{display:block;padding:0;border:none;background:none;cursor:zoom-in;width:100%;}
+.shot-view img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .4s ease;}
+.shot-view:hover img{transform:scale(1.03);}
+.shot figcaption{padding:13px 15px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#CFE0E6;line-height:1.6;}
 .shot figcaption b{color:var(--brass-bright);font-weight:500;display:block;}
 @media(min-width:620px){.gallery{grid-template-columns:1fr 1fr;}}
 @media(min-width:980px){.gallery{grid-template-columns:repeat(3,1fr);gap:22px;}}
 
+/* ---------- field footage (video) ---------- */
+.footage{display:grid;gap:18px;margin-top:34px;}
+.clip{border:1px solid var(--line-on-dark);border-radius:4px;overflow:hidden;background:#000;}
+.clip video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000;}
+.clip-cap{padding:12px 15px;background:rgba(247,244,237,0.04);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#CFE0E6;}
+.clip-cap b{color:var(--brass-bright);font-weight:500;display:block;}
+@media(min-width:820px){.footage{grid-template-columns:1fr 1fr;gap:22px;}}
+
+/* ---------- lightbox ---------- */
+.lightbox{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,13,23,0.92);}
+.lightbox.open{display:flex;}
+.lb-figure{max-width:1100px;width:100%;}
+.lb-figure img{width:100%;max-height:80vh;object-fit:contain;border-radius:3px;}
+.lb-figure figcaption{margin-top:14px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:#CFE0E6;}
+.lb-close{position:absolute;top:18px;right:20px;width:46px;height:46px;border:none;border-radius:3px;background:rgba(247,244,237,0.10);color:var(--cream);font-size:26px;line-height:1;cursor:pointer;}
+.lb-close:hover{background:var(--brass);color:#0B0E04;}
+
 /* ---------- china access ---------- */
-.access-box{
-  margin-top:44px;background:#FFFFFF;border:1px solid var(--paper-line);
-  border-top:4px solid var(--brass);border-radius:4px;
-  padding:30px 22px;max-width:720px;
-}
-.access-box .mono{
-  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--brass-deep);display:block;margin-bottom:18px;
-}
+.access-box{margin-top:44px;background:#FFFFFF;border:1px solid var(--paper-line);border-top:4px solid var(--brass);border-radius:4px;padding:30px 22px;max-width:720px;}
+.access-box .mono{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--brass-deep);display:block;margin-bottom:18px;}
 .field{margin-bottom:16px;}
-.field label{
-  display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:6px;
-}
-.field input,.field select,.field textarea{
-  width:100%;font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);
-  padding:12px 14px;border:1px solid var(--paper-line);border-radius:3px;background:#FFFFFF;
-}
+.field label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.field input,.field select,.field textarea{width:100%;font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);padding:12px 14px;border:1px solid var(--paper-line);border-radius:3px;background:#FFFFFF;}
 .field textarea{min-height:110px;resize:vertical;}
 .field input::placeholder,.field textarea::placeholder{color:#5C6670;}
 .access-note{font-size:13px;color:var(--muted-on-cream);margin-top:14px;}
-@media(min-width:640px){
-  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-}
+@media(min-width:640px){.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}}
 
 /* ---------- method ---------- */
 .method-grid{display:grid;gap:26px;margin-top:42px;}
 .method-item{border-top:1px solid var(--line-on-dark);padding-top:18px;}
-.method-item .mono{
-  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--teal-bright);display:block;margin-bottom:10px;
-}
+.method-item .mono{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--steel-bright);display:block;margin-bottom:10px;}
 .method-item h3{font-size:20px;color:#FFFFFF;margin-bottom:8px;}
 .method-item p{font-size:15px;color:#D6D1C5;}
 @media(min-width:880px){.method-grid{grid-template-columns:repeat(2,1fr);gap:36px 56px;}}
@@ -351,24 +296,19 @@ h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;line-height:1.12
 
 /* ---------- footer ---------- */
 footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-dark);}
-.foot-inner{
-  max-width:var(--max);margin:0 auto;padding:54px 20px 40px;
-  display:grid;gap:34px;
-}
+.foot-inner{max-width:var(--max);margin:0 auto;padding:54px 20px 40px;display:grid;gap:34px;}
 .foot-brand{font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.14em;color:var(--cream);}
 .foot-brand b{color:var(--brass-bright);font-weight:500;}
-.foot-col h4{
-  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;
-  letter-spacing:0.16em;text-transform:uppercase;color:#9FB3B4;margin-bottom:14px;
-}
+.foot-social{display:flex;gap:14px;margin-top:18px;}
+.foot-social a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line-on-dark);border-radius:3px;color:#CFE0E6;transition:background .18s ease,color .18s ease,border-color .18s ease;}
+.foot-social a:hover{background:var(--brass);color:#0B0E04;border-color:var(--brass);}
+.foot-social svg{width:18px;height:18px;fill:currentColor;}
+.foot-col h4{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#9FB3B4;margin-bottom:14px;}
 .foot-col ul{list-style:none;display:grid;gap:9px;}
 .foot-col a{color:#E2DDD1;text-decoration:none;font-size:14px;}
 .foot-col a:hover{color:var(--brass-bright);}
 .foot-col p{font-size:14px;line-height:1.7;color:#C9C3B6;}
-.legal{
-  border-top:1px solid rgba(247,244,237,0.12);margin-top:8px;padding-top:24px;
-  font-size:12.5px;line-height:1.7;color:#A8A294;
-}
+.legal{border-top:1px solid rgba(247,244,237,0.12);margin-top:8px;padding-top:24px;font-size:12.5px;line-height:1.7;color:#A8A294;}
 .legal p+p{margin-top:10px;}
 @media(min-width:880px){
   .foot-inner{grid-template-columns:1.4fr 1fr 1fr;}
@@ -405,13 +345,18 @@ footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-da
     <a href="#field-reports">Field Reports</a>
     <a href="#china-access">China Access</a>
     <a href="#method">Method</a>
-    <a href="#front-brief"><strong>Get The Front Brief →</strong></a>
+    <a href="#front-brief"><strong>Get The Front Brief &rarr;</strong></a>
   </nav>
 </header>
 
 <!-- ============================ HERO ============================ -->
 <section class="hero" id="top">
-  <div class="hero-bg" role="img" aria-label="Humanoid robot on the streets of Shenzhen"></div>
+  <picture class="hero-bg">
+    <source type="image/avif" srcset="assets/hero-shenzhen-humanoid.avif">
+    <source type="image/webp" srcset="assets/hero-shenzhen-humanoid.webp">
+    <img src="assets/hero-shenzhen-humanoid.jpg" alt="Humanoid robot in a Shenzhen showroom" width="1200" height="1500" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="hero-scrim"></div>
   <div class="hero-inner">
     <p class="dateline on-dark">Robofront Intelligence · Shenzhen — Hong Kong</p>
     <h1>Live from the frontline of the <em>robot age.</em></h1>
@@ -493,7 +438,7 @@ footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-da
       </div>
 
       <div class="product">
-        <span class="tag teal">Subscription · Monthly</span>
+        <span class="tag steel">Subscription · Monthly</span>
         <h3>China Robotics Monthly</h3>
         <p>The institutional layer: deployment tracking, pricing data, supply-chain movements and company-level intelligence — compiled from field access, not feeds.</p>
         <span class="for">For · investors · strategy teams</span>
@@ -505,12 +450,12 @@ footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-da
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <input type="hidden" name="product" value="China Robotics Monthly">
           <input type="email" name="email" placeholder="Work email" required aria-label="Work email for China Robotics Monthly">
-          <button class="btn btn-teal" type="submit">Request access</button>
+          <button class="btn btn-steel" type="submit">Request access</button>
         </form>
       </div>
 
       <div class="product">
-        <span class="tag teal">Report · On demand</span>
+        <span class="tag steel">Report · On demand</span>
         <h3>Deep Dives</h3>
         <p>Single-topic research reports: a company, a component class, a deployment category — investigated on the ground and written for decisions, not for clicks.</p>
         <span class="for">For · funds · corporates · media houses</span>
@@ -522,7 +467,7 @@ footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-da
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <input type="hidden" name="product" value="Deep Dives">
           <input type="email" name="email" placeholder="Work email" required aria-label="Work email for Deep Dives">
-          <button class="btn btn-teal" type="submit">Commission a Deep Dive</button>
+          <button class="btn btn-steel" type="submit">Commission a Deep Dive</button>
         </form>
       </div>
 
@@ -548,7 +493,7 @@ footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-da
 </section>
 
 <!-- ============================ BAND ============================ -->
-<div class="band" role="img" aria-label="Shenzhen towers, diagonal view"></div>
+<div class="band band-towers" role="img" aria-label="Shenzhen towers, diagonal view"></div>
 <div class="band-caption">Futian CBD · Shenzhen · field photography © Robofront</div>
 
 <!-- ============================ ADVISORY ============================ -->
@@ -559,7 +504,11 @@ footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-da
     <p class="sub">Robofront advises organisations entering, investing in, or competing with the China robotics ecosystem — built on direct field access and an independent position.</p>
     <div class="advisory-grid">
       <div class="advisory-img">
-        <img src="assets/corridor-futian-cbd.jpg" alt="Corridor view in Futian CBD, Shenzhen" loading="lazy">
+        <picture>
+          <source type="image/avif" srcset="assets/corridor-futian-cbd.avif">
+          <source type="image/webp" srcset="assets/corridor-futian-cbd.webp">
+          <img src="assets/corridor-futian-cbd.jpg" alt="Corridor view in Futian CBD, Shenzhen" width="1600" height="900" loading="lazy" decoding="async">
+        </picture>
       </div>
       <ul class="advisory-list">
         <li>
@@ -609,29 +558,81 @@ footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-da
     <p class="sub">A sample from the latest field cycle: humanoid retail, dexterous hands, robot-operated commerce and the streets where the robot economy is already operating.</p>
     <div class="gallery">
       <figure class="shot">
-        <img src="assets/field-future-era-store.jpg" alt="Robot retail store in Shenzhen" loading="lazy">
+        <button class="shot-view" type="button" data-cap="Robot 6S store · Shenzhen · 06.2026">
+          <picture>
+            <source type="image/avif" srcset="assets/field-future-era-store.avif">
+            <source type="image/webp" srcset="assets/field-future-era-store.webp">
+            <img src="assets/field-future-era-store.jpg" alt="Robot retail store in Shenzhen" width="960" height="1200" loading="lazy" decoding="async">
+          </picture>
+        </button>
         <figcaption><b>Robot 6S store</b>Retail humanoids sold like cars — showroom, service, trade-in.</figcaption>
       </figure>
       <figure class="shot">
-        <img src="assets/field-dexterous-hands.jpg" alt="Dexterous robotic hands on display" loading="lazy">
+        <button class="shot-view" type="button" data-cap="Dexterous hands · component floor · 06.2026">
+          <picture>
+            <source type="image/avif" srcset="assets/field-dexterous-hands.avif">
+            <source type="image/webp" srcset="assets/field-dexterous-hands.webp">
+            <img src="assets/field-dexterous-hands.jpg" alt="Dexterous robotic hands on display" width="1100" height="825" loading="lazy" decoding="async">
+          </picture>
+        </button>
         <figcaption><b>Dexterous hands</b>Component-level progress that never makes the headlines.</figcaption>
       </figure>
       <figure class="shot">
-        <img src="assets/field-deployment-mall.jpg" alt="Robot deployment in a Shenzhen shopping mall" loading="lazy">
+        <button class="shot-view" type="button" data-cap="Mall deployment · live operation · 06.2026">
+          <picture>
+            <source type="image/avif" srcset="assets/field-deployment-mall.avif">
+            <source type="image/webp" srcset="assets/field-deployment-mall.webp">
+            <img src="assets/field-deployment-mall.jpg" alt="Robot deployment in a Shenzhen shopping mall" width="1100" height="824" loading="lazy" decoding="async">
+          </picture>
+        </button>
         <figcaption><b>Mall deployment</b>Service robots in live commercial operation, not demo mode.</figcaption>
       </figure>
       <figure class="shot">
-        <img src="assets/field-robot-coffee-kiosk.jpg" alt="Robot-operated coffee kiosk" loading="lazy">
+        <button class="shot-view" type="button" data-cap="Robot coffee kiosk · unmanned F&amp;B · 06.2026">
+          <picture>
+            <source type="image/avif" srcset="assets/field-robot-coffee-kiosk.avif">
+            <source type="image/webp" srcset="assets/field-robot-coffee-kiosk.webp">
+            <img src="assets/field-robot-coffee-kiosk.jpg" alt="Robot-operated coffee kiosk" width="1100" height="825" loading="lazy" decoding="async">
+          </picture>
+        </button>
         <figcaption><b>Robot coffee kiosk</b>Unmanned F&amp;B economics, measured cup by cup.</figcaption>
       </figure>
       <figure class="shot">
-        <img src="assets/field-robot-latte.jpg" alt="Robot arm preparing a latte" loading="lazy">
+        <button class="shot-view" type="button" data-cap="The robot latte · precision &amp; repeatability">
+          <picture>
+            <source type="image/avif" srcset="assets/field-robot-latte.avif">
+            <source type="image/webp" srcset="assets/field-robot-latte.webp">
+            <img src="assets/field-robot-latte.jpg" alt="Robot arm preparing a latte" width="1100" height="825" loading="lazy" decoding="async">
+          </picture>
+        </button>
         <figcaption><b>The robot latte</b>Precision, repeatability and the labour question in one frame.</figcaption>
       </figure>
       <figure class="shot">
-        <img src="assets/field-humanoids-resting.jpg" alt="Humanoid robots in standby between shifts" loading="lazy">
+        <button class="shot-view" type="button" data-cap="Between shifts · humanoids on standby">
+          <picture>
+            <source type="image/avif" srcset="assets/field-humanoids-resting.avif">
+            <source type="image/webp" srcset="assets/field-humanoids-resting.webp">
+            <img src="assets/field-humanoids-resting.jpg" alt="Humanoid robots in standby between shifts" width="1100" height="1100" loading="lazy" decoding="async">
+          </picture>
+        </button>
         <figcaption><b>Between shifts</b>Humanoids on standby — the most honest photo of the frontier.</figcaption>
       </figure>
+    </div>
+
+    <!-- field footage: drop MP4s into assets/video/ (see README) -->
+    <div class="footage">
+      <div class="clip">
+        <video controls preload="none" playsinline poster="assets/field-deployment-mall.jpg">
+          <source src="assets/video/field-clip-01.mp4" type="video/mp4">
+        </video>
+        <div class="clip-cap"><b>Field clip · 01</b>Live deployment footage — Shenzhen field cycle.</div>
+      </div>
+      <div class="clip">
+        <video controls preload="none" playsinline poster="assets/field-robot-latte.jpg">
+          <source src="assets/video/field-clip-02.mp4" type="video/mp4">
+        </video>
+        <div class="clip-cap"><b>Field clip · 02</b>Robot-operated commerce, recorded on site.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -740,6 +741,18 @@ footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-da
     <div>
       <p class="foot-brand">ROBO<b>FRONT</b> INTELLIGENCE</p>
       <p style="margin-top:14px;font-size:14px;line-height:1.7;color:#C9C3B6;max-width:38ch;">Live from the frontline of the robot age. Field-verified robotics intelligence, strategic advisory and China access.</p>
+      <!-- ⚠️ REPLACE the href values with your real channel/handle/page (see README) -->
+      <div class="foot-social">
+        <a href="https://t.me/REPLACE_WITH_CHANNEL" aria-label="ROBOFRONT on Telegram" rel="me">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.94 4.66 18.9 19.2c-.23 1.02-.83 1.27-1.69.79l-4.66-3.44-2.25 2.17c-.25.25-.46.46-.94.46l.33-4.73L18.4 6.4c.37-.33-.08-.51-.58-.18L6.2 13.3l-4.62-1.45c-1-.31-1.02-1 .21-1.48l18.07-6.97c.84-.31 1.57.2 1.08 2.26z"/></svg>
+        </a>
+        <a href="https://x.com/REPLACE_WITH_HANDLE" aria-label="ROBOFRONT on X" rel="me">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/REPLACE_WITH_PAGE" aria-label="ROBOFRONT on LinkedIn" rel="me">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+      </div>
     </div>
     <div class="foot-col">
       <h4>Navigate</h4>
@@ -753,7 +766,7 @@ footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-da
     </div>
     <div class="foot-col">
       <h4>Operator</h4>
-      <p>KRYONIS SOVEREIGN SYSTEMS LIMITED<br>Hong Kong SAR<br><a href="#china-access" style="color:#E2DDD1;">partners@robofront.io →</a></p>
+      <p>KRYONIS SOVEREIGN SYSTEMS LIMITED<br>Hong Kong SAR<br><a href="#china-access" style="color:#E2DDD1;">partners@robofront.io &rarr;</a></p>
     </div>
     <div class="legal">
       <p><strong style="color:#C9C3B6;">Disclaimer.</strong> Robofront Intelligence provides research, reporting and analysis for informational purposes only. Nothing on this site or in any Robofront publication constitutes investment advice, an offer, or a solicitation to buy or sell any security or financial instrument. Readers should conduct their own due diligence and consult licensed professionals before making investment decisions.</p>
@@ -761,6 +774,15 @@ footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-da
     </div>
   </div>
 </footer>
+
+<!-- ============================ LIGHTBOX ============================ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Field photograph">
+  <button class="lb-close" id="lbClose" type="button" aria-label="Close">&times;</button>
+  <figure class="lb-figure">
+    <img id="lbImg" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+</div>
 
 <script>
 // ---------- mobile menu ----------
@@ -779,6 +801,36 @@ footer{background:var(--ink);color:#BDB7AA;border-top:1px solid var(--line-on-da
       burger.setAttribute('aria-expanded','false');
     });
   });
+})();
+
+// ---------- lightbox ----------
+(function(){
+  var lb=document.getElementById('lightbox');
+  var lbImg=document.getElementById('lbImg');
+  var lbCap=document.getElementById('lbCap');
+  var lbClose=document.getElementById('lbClose');
+  if(!lb)return;
+  var lastFocus=null;
+  function open(src,alt,cap){
+    lbImg.src=src; lbImg.alt=alt||''; lbCap.textContent=cap||'';
+    lb.classList.add('open'); document.body.style.overflow='hidden';
+    lbClose.focus();
+  }
+  function close(){
+    lb.classList.remove('open'); lbImg.src=''; document.body.style.overflow='';
+    if(lastFocus)lastFocus.focus();
+  }
+  document.querySelectorAll('.shot-view').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      lastFocus=btn;
+      var img=btn.querySelector('img');
+      var src=(img&&(img.currentSrc||img.src))||'';
+      open(src,img?img.alt:'',btn.getAttribute('data-cap'));
+    });
+  });
+  lbClose.addEventListener('click',close);
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close();});
 })();
 
 // ---------- scroll reveal (respects reduced motion) ----------
