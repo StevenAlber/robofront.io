@@ -1,10 +1,16 @@
-# ROBOFRONT Intelligence — robofront.io (v3.0)
+# ROBOFRONT Intelligence — robofront.io (v3.0 · flat)
+
+## NB — see ZIP on lameda struktuuriga (mobiili jaoks)
+Fondid on otse `assets/`-is (mitte `assets/fonts/`), et mobiilis ei peaks alamkausti laadima.
+`video/` on praegu välja jäetud — videoväljad näitavad posterpilti, klipid lisad hiljem
+(loo repos kaust `assets/video/` ja pane sinna field-clip-01.mp4 / field-clip-02.mp4).
+
 
 Static, single-file landing for **robofront.io**. No build step, no framework.
 Deploy to GitHub Pages and point DNS — see below.
 
 ## v3.0 — tehniline tipptaseme-pass (11.06.2026)
-- **Self-hostitud fondid** (`assets/fonts/`) — Newsreader + Inter muutuvfontidena, IBM Plex Mono.
+- **Self-hostitud fondid** (`assets/`) — Newsreader + Inter muutuvfontidena, IBM Plex Mono.
   Google Fonts CDN eemaldatud täielikult: kiirem, privaatne, püsiv. ~360K, esimene osapool.
 - **Pildid: AVIF + WebP + JPEG** iga foto kohta, serveeritud `<picture>` kaudu (brauser valib parima).
   Hero on päris `<img fetchpriority="high">` (eelnevalt CSS-taust) → eellaaditav, responsive-valmis.
