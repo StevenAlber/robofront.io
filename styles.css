@@ -440,3 +440,54 @@ footer .footer-legal {
     font-size: 0.65rem;
   }
 }
+
+/* ============================================================
+   KONTRASTIPARANDUS — nupud ja nav-CTA (lisatud 11.06.2026)
+   Ainult lisandused, midagi olemasolevat ei muudetud.
+   ============================================================ */
+
+.button {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* Primaarne nupp — navy taust, valge tekst */
+.button-primary,
+.button-primary-light {
+  background-color: #0F2942;
+  color: #FFFFFF;
+  border: 2px solid #0F2942;
+}
+
+/* Sekundaarne nupp — valge taust, navy tekst.
+   Nähtav nii heledal kui tumedal taustal. */
+.button-secondary,
+.button-secondary-dark {
+  background-color: #FFFFFF;
+  color: #0F2942;
+  border: 2px solid #0F2942;
+}
+
+/* Päise "Request Introduction" CTA */
+.nav-cta {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  background-color: #0F2942;
+  color: #FFFFFF !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.nav-cta:hover { opacity: 0.88; }
