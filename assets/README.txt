@@ -1,4 +1,4 @@
-Lae siia kuni 30-sekundilised MP4 klipid (H.264, 1080p, <90MB):
-- field-clip-01.mp4
-- field-clip-02.mp4
-Posterpildid on juba HTML-is seotud. Rohkem klippe: kopeeri video-card plokk index.html-is.
+ROBOFRONT pildivarad. Iga foto on AVIF + WebP + JPEG (varuvariant).
+Fotode vahetamine: aseta uued originaalid SAMADE .jpg-nimedega siia kausta ja jooksuta
+juurkaustas:  python3 optimize.py  (loob .avif/.webp/.jpg automaatselt). HTML-i ei pea muutma.
+Videod: assets/video/  ·  Fondid: assets/fonts/  ·  OG-kaart: og-image.jpg (1200x630).
