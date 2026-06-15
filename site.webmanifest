@@ -1,0 +1,15 @@
+{
+  "name": "Robofront China — Field-Intelligence Desk",
+  "short_name": "Robofront",
+  "description": "A Shenzhen-based field-intelligence desk tracking China's robotics economy.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0C1014",
+  "theme_color": "#0C1014",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any maskable" },
+    { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}
