@@ -1,1 +1,1 @@
-Upload only index.html to GitHub. Keep CNAME. This version removes final full stops from headline-style texts while preserving normal paragraph punctuation.
+Upload only index.html to GitHub. Keep CNAME. This version fixes the tiny sticky-header gap/vibration issue.
