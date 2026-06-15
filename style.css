@@ -265,3 +265,8 @@ body{
 }
 
 @media (max-width:760px){.page-hero h1{max-width:none}section .container[style*='grid-template-columns:1fr 1fr']{grid-template-columns:1fr !important}}
+@media (max-width:780px){
+  .site-nav.open .nav-cta{width:auto !important;box-sizing:border-box;margin:12px 18px 14px !important;
+    background:#E5484D !important;color:#fff !important;border:none !important;border-radius:11px;
+    text-align:center;padding:15px 20px;font-weight:600;display:block}
+}
