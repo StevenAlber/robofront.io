@@ -1,205 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROBOFRONT · China</title>
-<style>
-  :root{
-    --bg:#070a0f;
-    --card:#0c111a;
-    --card-edge:rgba(255,255,255,0.06);
-    --num:#eef3f8;
-    --label:#5b6573;
-    --cyan:#3ec8e0;
-    --live:#ef4444;
-    --hairline:rgba(255,255,255,0.05);
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    background:var(--bg);
-    color:var(--num);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    -webkit-font-smoothing:antialiased;
-    line-height:1.5;
-  }
-  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
-  .wrap{max-width:680px;margin:0 auto;padding:26px 22px 70px}
+  <meta charset="UTF-8" />
+  <link rel="preload" as="image" href="hero.jpg" fetchpriority="high" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROBOFRONT CHINA — China’s Robotics Future, Observed From the Inside</title>
+  <meta name="description" content="A Shenzhen-based field intelligence desk tracking the rise of China’s robotics civilization across humanoids, robot dogs, service fleets and smart factories." />
+  <link rel="canonical" href="https://robofront.io/" />
+  <meta name="theme-color" content="#0C1014" />
+  <meta name="author" content="Steven Alber" />
 
-  /* live bar */
-  .live{
-    display:flex;align-items:center;gap:14px;
-    font-size:12.5px;letter-spacing:.13em;color:var(--label);
-    padding-bottom:26px;border-bottom:1px solid var(--hairline);
-  }
-  .dot{
-    width:11px;height:11px;border-radius:50%;background:var(--live);flex:0 0 auto;
-    animation:pulse 2.4s ease-out infinite;
-  }
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(239,68,68,.55)}
-    70%{box-shadow:0 0 0 9px rgba(239,68,68,0)}
-    100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}
-  }
+  <!-- Open Graph (Facebook / Telegram / LinkedIn / WhatsApp) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Robofront China" />
+  <meta property="og:title" content="ROBOFRONT CHINA — China’s Robotics Future, Observed From the Inside" />
+  <meta property="og:description" content="A Shenzhen-based field-intelligence desk tracking the moment robotics in China stops being a spectacle and becomes infrastructure — humanoids, robot dogs, service fleets and smart factories." />
+  <meta property="og:url" content="https://robofront.io/" />
+  <meta property="og:image" content="https://robofront.io/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://robofront.io/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Robofront China — field-intelligence desk, Shenzhen" />
+  <meta property="og:locale" content="en_US" />
 
-  /* brand */
-  .brand{display:flex;align-items:center;gap:16px;padding:30px 0 4px}
-  .logo{
-    width:58px;height:58px;border-radius:15px;flex:0 0 auto;
-    background:radial-gradient(circle at 38% 35%,#5fe3f4 0%,#16899c 42%,#0a3540 100%);
-    position:relative;
-    box-shadow:0 0 26px rgba(62,200,224,.25),inset 0 0 14px rgba(0,0,0,.4);
-  }
-  .logo::after{
-    content:"";position:absolute;inset:0;margin:auto;
-    width:20px;height:20px;border-radius:50%;
-    border:2px solid rgba(239,68,68,.85);
-  }
-  .brand h1{font-size:30px;font-weight:800;letter-spacing:.01em;line-height:1}
-  .brand .sub{font-size:12.5px;letter-spacing:.22em;color:var(--label);margin-top:6px}
-  .menu{margin-left:auto;color:var(--num);font-size:22px;line-height:1;opacity:.9}
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ROBOFRONT CHINA — China’s Robotics Future, Observed From the Inside" />
+  <meta name="twitter:description" content="Shenzhen-based field-intelligence desk: humanoids, robot dogs, service fleets and smart factories — the transition from spectacle to infrastructure." />
+  <meta name="twitter:image" content="https://robofront.io/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Robofront China — field-intelligence desk, Shenzhen" />
 
-  /* hero */
-  .hero{
-    margin:30px 0 26px;padding:26px 22px;
-    border:1px solid var(--hairline);border-radius:16px;
-    font-size:21px;font-weight:700;
-  }
+  <!-- Icons & manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
-  /* desk card */
-  .card{
-    background:var(--card);
-    border:1px solid var(--card-edge);
-    border-radius:18px;
-    padding:28px 24px 32px;
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://robofront.io/#org",
+        "name": "Robofront China",
+        "alternateName": "ROBOFRONT Intelligence",
+        "url": "https://robofront.io/",
+        "logo": "https://robofront.io/icon-512.png",
+        "image": "https://robofront.io/og-image.jpg",
+        "description": "A Shenzhen-based field-intelligence desk tracking the rise of China’s robotics economy across humanoids, robot dogs, service fleets and smart factories.",
+        "founder": { "@type": "Person", "name": "Steven Alber" },
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://robofront.io/#site",
+        "url": "https://robofront.io/",
+        "name": "Robofront China",
+        "publisher": { "@id": "https://robofront.io/#org" },
+        "inLanguage": "en"
+      }
+    ]
   }
-  .card-head{
-    display:flex;justify-content:space-between;align-items:baseline;gap:12px;
-    font-size:12px;letter-spacing:.15em;color:var(--label);margin-bottom:32px;
-  }
-  .stat{margin-bottom:40px}
-  .stat .cap{font-size:12px;letter-spacing:.15em;color:var(--label);margin-bottom:16px}
-  .stat .value{
-    font-weight:800;line-height:.9;letter-spacing:-.01em;
-    font-variant-numeric:tabular-nums;font-feature-settings:"tnum";
-  }
-  .stat.big .value{font-size:72px}
-  .stat.small .value{font-size:50px}
-
-  /* signals */
-  .signal{
-    border:1px solid var(--hairline);border-radius:14px;
-    padding:22px 20px;margin-top:16px;
-  }
-  .signal .tag{font-size:12px;letter-spacing:.12em;color:var(--cyan);margin-bottom:14px}
-  .signal .text{font-size:20px;font-weight:700;line-height:1.32}
-
-  @media (max-width:430px){
-    .stat.big .value{font-size:60px}
-    .stat.small .value{font-size:44px}
-  }
-</style>
+  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="wrap">
-
-  <div class="live mono" id="liveBar">LIVE FROM SHENZHEN</div>
-
-  <div class="brand">
-    <div class="logo" aria-hidden="true"></div>
-    <div>
-      <h1>ROBOFRONT</h1>
-      <div class="sub mono">CHINA</div>
-    </div>
-    <div class="menu mono" aria-hidden="true">&#9776;</div>
-  </div>
-
-  <div class="hero">Read the latest field report</div>
-
-  <div class="card">
-    <div class="card-head mono">
-      <span>TODAY ON THE DESK</span>
-      <span id="updated">UPDATED —</span>
-    </div>
-
-    <div class="stat big">
-      <div class="cap mono">TRACKED DEPLOYMENTS</div>
-      <div class="value mono" id="deployments" data-dur="2000">0</div>
-    </div>
-
-    <div class="stat small">
-      <div class="cap mono">REPORTS THIS WEEK</div>
-      <div class="value mono" id="reports" data-dur="1100">0</div>
+  <div class="command-bar">
+    <div class="container command-inner">
+      <div class="command-left">
+        <span class="live-dot"></span>
+        <span class="mono">LIVE FROM SHENZHEN · 22.5431° N, 114.0579° E</span>
+      </div>
+      <div class="command-right mono">
+        <span>RFI-100: 1,247 <em class="up">▲ +12</em></span>
+        <span data-shenzhen-clock>SHENZHEN 07:00</span>
+        <a href="access.html">Desk Login</a>
+      </div>
     </div>
   </div>
 
-  <div id="signals"></div>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>ROBOFRONT</strong>
+          <small>CHINA</small>
+        </span>
+      </a>
+      <nav class="site-nav"><a href="domains.html">Domains</a><a href="field-reports.html">Field Reports</a><a href="products.html">Products</a><a href="club.html">Club</a><a class="nav-cta" href="access.html">Access Intelligence</a></nav>
+      <button class="menu-toggle" aria-label="Open navigation">☰</button>
+    </div>
+  </header>
 
-</div>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow mono">§01 / FIELD-INTELLIGENCE DESK</p>
+          <h1>China’s Robotics Future,<br />Observed From the Inside</h1>
+          <p class="subhead">A Shenzhen-based field-intelligence desk tracking the moment when robotics in China stops being a spectacle and becomes infrastructure</p>
+          <p class="hero-line mono">HUMANOIDS · ROBOT DOGS · SERVICE FLEETS · SMART FACTORIES · EMBODIED AI · ROBOTIC INFRASTRUCTURE</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#briefing">Access Intelligence →</a>
+            <a class="btn btn-secondary" href="field-reports.html">Read the latest field report</a>
+          </div>
+        </div>
+        <aside class="hero-panel panel">
+          <div class="panel-head">
+            <span class="eyebrow mono">TODAY ON THE DESK</span>
+            <span class="mono faint">UPDATED 07:54</span>
+          </div>
+          <div class="metric-row">
+            <div>
+              <label class="mono">Tracked deployments</label>
+              <strong data-count="1247">0</strong>
+            </div>
+            <div>
+              <label class="mono">Reports this week</label>
+              <strong data-count="9">0</strong>
+            </div>
+          </div>
+          <div class="signal-list">
+            <article>
+              <span class="signal-tag mono">SIGNAL / HUMANOIDS</span>
+              <h3>Assembly floor visibility is rising faster than public understanding</h3>
+            </article>
+            <article>
+              <span class="signal-tag mono">SIGNAL / HOSPITALITY</span>
+              <h3>Service robotics is maturing from novelty into operational layer</h3>
+            </article>
+            <article>
+              <span class="signal-tag mono">SIGNAL / ROBOT DOGS</span>
+              <h3>Quadruped platforms are expanding from demo environments into controlled deployment zones</h3>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-<script src="data.js"></script>
-<script>
-(function(){
-  var D = window.ROBOFRONT_DATA || {};
-  var reduce = window.matchMedia &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    <section class="ticker-wrap" aria-label="Live signal ticker">
+      <div class="ticker-track mono">
+        <span>LIVE SIGNALS / SHENZHEN FIELD DESK</span>
+        <span>Humanoids moving from showroom narrative to factory adjacency</span>
+        <span>Hotel robotics and restaurant automation entering visibility phase</span>
+        <span>Robot-dog platforms gaining stronger enterprise and facility positioning</span>
+        <span>Supply chain density remains the hidden advantage of Shenzhen</span>
+        <span>Embodied AI narrative is being built on top of deployment reality</span>
+      </div>
+    </section>
 
-  // --- static text ---
-  if(D.location) document.getElementById('liveBar').textContent = D.location;
-  if(D.updated)  document.getElementById('updated').textContent = D.updated;
+    <section class="section" id="domains">
+      <div class="container">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow mono">§02 / THE FIVE DOMAINS</p>
+            <h2>The platforms, systems and environments shaping China’s robotics economy</h2>
+          </div>
+          <p class="section-kicker">Not content categories — operational fronts</p>
+        </div>
+        <div class="domain-grid">
+          <article class="domain-card panel tall">
+            <picture><source type="image/avif" srcset="field-01.avif"><source type="image/webp" srcset="field-01.webp"><img src="field-01.jpg" alt="Humanoid robots in a premium interior"  loading="lazy" decoding="async"></picture>
+            <div class="card-copy">
+              <span class="eyebrow mono">HUMANOIDS</span>
+              <h3>Human-form systems moving from symbolic presence to industrial adjacency</h3>
+            </div>
+          </article>
+          <article class="domain-card panel">
+            <picture><source type="image/avif" srcset="field-02.avif"><source type="image/webp" srcset="field-02.webp"><img src="field-02.jpg" alt="Robot dog in a modern corridor"  loading="lazy" decoding="async"></picture>
+            <div class="card-copy">
+              <span class="eyebrow mono">MOBILITY</span>
+              <h3>Robot dogs and mobile platforms</h3>
+            </div>
+          </article>
+          <article class="domain-card panel">
+            <picture><source type="image/avif" srcset="field-03.avif"><source type="image/webp" srcset="field-03.webp"><img src="field-03.jpg" alt="Robot hands manipulating components"  loading="lazy" decoding="async"></picture>
+            <div class="card-copy">
+              <span class="eyebrow mono">FACTORY</span>
+              <h3>Manipulation, assembly, precision control</h3>
+            </div>
+          </article>
+          <article class="domain-card panel wide">
+            <picture><source type="image/avif" srcset="field-04.avif"><source type="image/webp" srcset="field-04.webp"><img src="field-04.jpg" alt="Advanced robot dog in a robotics showroom"  loading="lazy" decoding="async"></picture>
+            <div class="card-copy">
+              <span class="eyebrow mono">SERVICE</span>
+              <h3>Hospitality, facilities and front-of-house automation as visible public interface</h3>
+            </div>
+          </article>
+          <article class="domain-card panel wide">
+            <picture><source type="image/avif" srcset="field-05.avif"><source type="image/webp" srcset="field-05.webp"><img src="field-05.jpg" alt="Humanoid robot in front of Shenzhen skyline at night"  loading="lazy" decoding="async"></picture>
+            <div class="card-copy">
+              <span class="eyebrow mono">INFRASTRUCTURE</span>
+              <h3>Shenzhen as the city where robotics starts behaving like infrastructure</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  // --- signals ---
-  var sigWrap = document.getElementById('signals');
-  (D.signals || []).forEach(function(s){
-    var card = document.createElement('div');
-    card.className = 'signal';
-    var tag = document.createElement('div');
-    tag.className = 'tag mono';
-    tag.textContent = s.tag || '';
-    var text = document.createElement('div');
-    text.className = 'text';
-    text.textContent = s.text || '';
-    card.appendChild(tag); card.appendChild(text);
-    sigWrap.appendChild(card);
-  });
+    <section class="section alt" id="report">
+      <div class="container feature-grid">
+        <div class="feature-copy">
+          <p class="eyebrow mono">§03 / LATEST FIELD REPORT</p>
+          <h2>Inside the deployment layer: from robot lobbies to factory-floor assembly visibility</h2>
+          <p>The newest long-form desk note tracks the visible convergence between hospitality robotics, robot-dog presence, assembly-floor adjacency and the Shenzhen hardware moat.</p>
+          <div class="locked-preview panel">
+            <div class="locked-head">
+              <span class="mono">FIELD REPORT / RF-27</span>
+              <span class="lock">LOCKED PREVIEW</span>
+            </div>
+            <p>Robotics in China is no longer best understood through product launches alone. The more important story is the accumulation of deployment environments: hotel corridors, managed service surfaces, semi-public showrooms, and manufacturing spaces where machines are no longer a future promise but a present layer.</p>
+            <ul>
+              <li>Deployment visibility vs actual capability</li>
+              <li>Why Shenzhen compresses iteration cycles</li>
+              <li>The bridge between spectacle and infrastructure</li>
+            </ul>
+            <a class="btn btn-primary" href="access.html?interest=Shenzhen%20Field%20Reports" data-interest="Shenzhen Field Reports">Unlock subscriber access</a>
+          </div>
+        </div>
+        <div class="feature-media panel">
+          <picture><source type="image/avif" srcset="field-06.avif"><source type="image/webp" srcset="field-06.webp"><img src="field-06.jpg" alt="Humanoid robot on a Shenzhen factory floor"  loading="lazy" decoding="async"></picture>
+          <div class="caption mono">SOURCE / ROBOFRONT FIELD DESK · SHENZHEN · 2026</div>
+        </div>
+      </div>
+    </section>
 
-  // --- count-up ---
-  function ease(t){ return t===1 ? 1 : 1 - Math.pow(2, -10*t); }
-  function run(el, target){
-    var dur = parseInt(el.getAttribute('data-dur'),10) || 1800;
-    if(reduce){ el.textContent = target.toLocaleString('en-US'); return; }
-    var start=null;
-    function step(ts){
-      if(start===null) start=ts;
-      var p=Math.min((ts-start)/dur,1);
-      el.textContent = Math.round(target*ease(p)).toLocaleString('en-US');
-      if(p<1) requestAnimationFrame(step);
-      else el.textContent = target.toLocaleString('en-US');
-    }
-    requestAnimationFrame(step);
-  }
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow mono">§04 / INTELLIGENCE PRODUCTS</p>
+            <h2>Six monetized intelligence verticals built for readers who need edge</h2>
+          </div>
+        </div>
+        <div class="product-grid">
+          <article class="product-card panel"><span class="code mono">RF-01</span><h3>Intelligence Briefings</h3><p>Weekly written desk on what shipped, deployed and inflected in China’s robotics economy.</p><a href="access.html?interest=Intelligence%20Briefings" data-interest="Intelligence Briefings">Activate subscription</a></article>
+          <article class="product-card panel"><span class="code mono">RF-02</span><h3>Shenzhen Field Reports</h3><p>On-the-ground deep dives from factories, showrooms, restaurants, hotels and deployment sites.</p><a href="access.html?interest=Shenzhen%20Field%20Reports" data-interest="Shenzhen Field Reports">Request access</a></article>
+          <article class="product-card panel"><span class="code mono">RF-03</span><h3>Market Signal Monitoring</h3><p>Deployment, funding, policy and supply-chain movement tracked as a living signal flow.</p><a href="products.html" data-interest="Market Signal Monitoring">View desk tiers</a></article>
+          <article class="product-card panel"><span class="code mono">RF-04</span><h3>Custom Robotics Research</h3><p>Commissioned investigations for funds, OEMs, policy teams and corporate strategy units.</p><a href="access.html?interest=Custom%20Robotics%20Research" data-interest="Custom Robotics Research">Start an inquiry</a></article>
+          <article class="product-card panel"><span class="code mono">RF-05</span><h3>Strategic Advisory</h3><p>Direct desk access for institutional clients requiring contextualized robotics intelligence.</p><a href="access.html?interest=Strategic%20Advisory" data-interest="Strategic Advisory">Request briefing</a></article>
+          <article class="product-card panel highlight"><span class="code mono">RF-06</span><h3>Robofront Club</h3><p>The inner ring: closed-door briefings, off-record calls, member access and Shenzhen-grounded conversation.</p><a href="club.html" data-interest="Robofront Club">Request consideration</a></article>
+        </div>
+      </div>
+    </section>
 
-  var items = [
-    { el: document.getElementById('deployments'), val: D.deployments || 0 },
-    { el: document.getElementById('reports'),     val: D.reports || 0 }
-  ];
+    <section class="section alt">
+      <div class="container inside-grid">
+        <div class="inside-copy">
+          <p class="eyebrow mono">§05 / WHY SHENZHEN · WHY INSIDE</p>
+          <h2>The moat is not commentary. The moat is proximity</h2>
+          <p>Shenzhen compresses prototyping, sourcing, integration and observation into one geography. The advantage is not just access to robots. It is access to the environments, suppliers and operating surfaces around them.</p>
+          <div class="mini-stats">
+            <div class="mini-stat panel"><span class="mono">FIELD NODE</span><strong>Shenzhen</strong></div>
+            <div class="mini-stat panel"><span class="mono">TRACKED FRONTS</span><strong>5+</strong></div>
+            <div class="mini-stat panel"><span class="mono">SIGNAL MODE</span><strong>Daily</strong></div>
+          </div>
+        </div>
+        <div class="inside-media-grid">
+          <figure class="panel"><picture><source type="image/avif" srcset="field-07.avif"><source type="image/webp" srcset="field-07.webp"><img src="field-07.jpg" alt="Robot dog in advanced lab"  loading="lazy" decoding="async"></picture><figcaption class="mono">LAB / MOBILITY SYSTEMS</figcaption></figure>
+          <figure class="panel"><picture><source type="image/avif" srcset="field-08.avif"><source type="image/webp" srcset="field-08.webp"><img src="field-08.jpg" alt="Humanoid robot in workshop setting"  loading="lazy" decoding="async"></picture><figcaption class="mono">FLOOR / ASSEMBLY VISIBILITY</figcaption></figure>
+        </div>
+      </div>
+    </section>
 
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          var m = items.find(function(i){ return i.el === e.target; });
-          if(m) run(m.el, m.val);
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    items.forEach(function(i){ io.observe(i.el); });
-  } else {
-    items.forEach(function(i){ run(i.el, i.val); });
-  }
-})();
-</script>
+    <section class="section" id="evidence">
+      <div class="container">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow mono">§06 / FIELD EVIDENCE</p>
+            <h2>Observed surfaces from the current robotics transition</h2>
+          </div>
+        </div>
+        <div class="evidence-grid">
+          <figure class="evidence-card panel">
+            <picture><source type="image/avif" srcset="field-09.avif"><source type="image/webp" srcset="field-09.webp"><img src="field-09.jpg" alt="Single humanoid robot in blue interior"  loading="lazy" decoding="async"></picture>
+            <figcaption><span class="mono">SOURCE / ROBOFRONT DESK</span><strong>Humanoid presence in premium service-facing architecture</strong></figcaption>
+          </figure>
+          <figure class="evidence-card panel">
+            <picture><source type="image/avif" srcset="field-10.avif"><source type="image/webp" srcset="field-10.webp"><img src="field-10.jpg" alt="Robot dog in corridor"  loading="lazy" decoding="async"></picture>
+            <figcaption><span class="mono">SOURCE / ROBOFRONT DESK</span><strong>Quadruped form factor in managed interior environment</strong></figcaption>
+          </figure>
+          <figure class="evidence-card panel">
+            <picture><source type="image/avif" srcset="field-11.avif"><source type="image/webp" srcset="field-11.webp"><img src="field-11.jpg" alt="Robot overlooking Shenzhen skyline"  loading="lazy" decoding="async"></picture>
+            <figcaption><span class="mono">SOURCE / ROBOFRONT DESK</span><strong>Shenzhen as vantage point, platform and signal field</strong></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section club-section alt" id="club">
+      <div class="container club-grid panel">
+        <div>
+          <p class="eyebrow mono">§07 / ROBOFRONT CLUB</p>
+          <h2>The inner ring for deeper Estonian-language analysis</h2>
+          <p>Robofront Club is the private layer: sharper analysis on robotics, jobs, security, business, society and the future usefulness of human beings.</p>
+          <ul class="club-list">
+            <li>Private field notes and desk memos</li>
+            <li>Inner-ring commentary and curated signals</li>
+            <li>Future closed-door briefings and member access</li>
+          </ul>
+        </div>
+        <div class="club-box">
+          <span class="mono">FOUNDING MEMBERSHIP</span>
+          <strong>50€</strong>
+          <p>Private analysis, signal access and future inner-ring briefing layer.</p>
+          <a class="btn btn-primary" href="access.html?interest=Robofront%20Club" data-interest="Robofront Club">Join Robofront Club</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section briefing" id="briefing">
+      <div class="container briefing-grid">
+        <div>
+          <p class="eyebrow mono">§08 / ACCESS INTELLIGENCE</p>
+          <h2>Request the weekly desk briefing or ask for institutional access</h2>
+          <p>Top-of-funnel access starts with a field briefing. Institutional relationships begin with a direct inquiry.</p>
+        </div>
+        <form class="briefing-form panel">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="Your email" autocomplete="email" required />
+          </label>
+          <label>
+            <span>Interest</span>
+            <select name="interest">
+              <option>Intelligence Briefings</option>
+              <option>Shenzhen Field Reports</option>
+              <option>Market Signal Monitoring</option>
+              <option>Custom Robotics Research</option>
+              <option>Strategic Advisory</option>
+              <option>Robofront Club</option>
+            </select>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea rows="4" name="message" placeholder="Tell us what kind of robotics intelligence you need."></textarea>
+          </label>
+          <!-- honeypot: bots fill this, humans never see it -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" />
+          <button type="submit" class="btn btn-primary">Request Access</button>
+          <p class="form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html">
+          <span class="brand-mark"></span>
+          <span><strong>ROBOFRONT</strong><small>CHINA</small></span>
+        </a>
+        <p>A field-intelligence desk documenting the transition of robotics in China from spectacle to infrastructure.</p>
+      </div>
+      <div>
+        <span class="eyebrow mono">INDEX</span>
+        <ul>
+          <li><a href="domains.html">Domains</a></li>
+          <li><a href="field-reports.html">Field Reports</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="club.html">Club</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="eyebrow mono">DESK STATUS</span>
+        <ul class="mono status-list">
+          <li>NODE / SHENZHEN</li>
+          <li>RFI / 1,247 ▲ +12</li>
+          <li>MODE / LIVE</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
 </body>
 </html>
