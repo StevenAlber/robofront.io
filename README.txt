@@ -1,1 +1,1 @@
-Upload only index.html to GitHub. Keep CNAME. This version fixes the tiny sticky-header gap/vibration issue.
+Upload only index.html to GitHub. Keep CNAME. V3.2 fixed-header anti-flicker patch.
