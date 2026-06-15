@@ -1,0 +1,1 @@
+Upload only index.html to GitHub. Keep CNAME. No assets folder is needed.
